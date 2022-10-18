@@ -8,6 +8,7 @@ import { Home } from './pages/home';
 import { Inventario } from './pages/inventario';
 import { NavigationBar } from './components/navigationBar';
 import './App.sass';
+import { VehicleDetailComponent } from './components/vehicleDetail';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/inventario' element={<Inventario/>}></Route>
+          <Route path='/detail/:id' element={<VehicleDetailComponent/>}></Route>
         </Routes>
         
       </Router>

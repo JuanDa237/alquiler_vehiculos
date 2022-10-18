@@ -5,17 +5,11 @@ import { VehiclesList } from '../components/VehiclesList'
 export function Inventario() {
     return (
         <div>
-            <div>
+            <div className='header-container'>
                 <h1>Inventario</h1>
-                <select>
-                    <option value="">Precio: menor a mayor</option>
-                    <option value="">Precio: mayor a menor</option>
-                    <option value="">Kilometraje: mayor a menor</option>
-                    <option value="">Kilometraje: menor a mayor</option>
-                    <option value="">Año: mayor a menor</option>
-                    <option value="">Año: menor a mayor</option>
-                    <option value="">Distance: más cercana</option>
-                </select>
+                <div>
+                    <label>Fecha de reserva: </label><input type="date" value="16-10-2022" />
+                </div>
             </div>
             <div className="alquiler">
                 <Filter></Filter>
