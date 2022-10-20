@@ -1,4 +1,4 @@
-import { NavigationBar } from '../components/navigationBar';
+import { NavigationBar } from '../components/NavigationBar';
 import { VehicleCard } from '../components/VehicleCard';
 import { vehicles } from '../data/vehicle';
 

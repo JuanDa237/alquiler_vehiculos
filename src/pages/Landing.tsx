@@ -1,4 +1,4 @@
-import { NavigationBar } from '../components/navigationBar';
+import { NavigationBar } from '../components/NavigationBar';
 
 export function Landing() {
   return (

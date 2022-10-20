@@ -30,9 +30,9 @@ export function Login() {
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
-          <button className="w-100 btn btn-lg btn-primary" type="submit">
+          <a className="w-100 btn btn-lg btn-primary" href="/dashboard">
             Sign in
-          </button>
+          </a>
           <p className="mt-5 mb-3 text-muted">© 2017–2022</p>
         </form>
       </main>
