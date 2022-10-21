@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function DashboardNav() {
   return (
@@ -30,9 +31,7 @@ export function DashboardNav() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#x">
-                Entrega
-              </a>
+              <Link className="nav-link" to='entrega'>Entrega</Link>
             </li>
           </ul>
         </div>
