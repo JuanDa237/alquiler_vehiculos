@@ -55,7 +55,7 @@ export function Entrega() {
                             activeStep === 0 ? (
                                 <form>
                                     <label>Información Personal</label>
-                                    <Box sx={{ display: 'grid', gridTemplateColumns: '50% 50%', padding: '20px', rowGap: '2rem' }}>
+                                    <Box sx={{ display: 'grid', gridTemplateColumns: '50% 50%', padding: '20px', rowGap: '2rem', columnGap: '2rem' }}>
                                         <span>
                                             <label>Tipo de documento</label>
                                             <select style={{ width: '100%' }} name="" id="">
