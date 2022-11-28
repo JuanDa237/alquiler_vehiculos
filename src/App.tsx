@@ -15,9 +15,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          {/* Publicas */}
           <Route path="/" element={<Landing />}></Route>
           <Route path="/vehiculos" element={<VehiclesList />}></Route>
           <Route path="/vehiculo/:id" element={<VehicleDetail />}></Route>
+
+          {/* Privadas */}
           <Route path="/login" element={<Login />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/devolucion" element={<Devolucion />}></Route>
@@ -25,7 +28,7 @@ function App() {
             path="/devolucion/finalizado"
             element={<DevolucionDos />}
           ></Route>
-          <Route path="/dashboard/entrega" element={<Entrega />}></Route>
+          <Route path="/entrega" element={<Entrega />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

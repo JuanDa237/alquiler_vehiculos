@@ -1,9 +1,9 @@
-import { NavigationBar } from '../components/NavigationBar';
+import { DashboardNav } from '../components/DashboardNav';
 
 export function Devolucion() {
   return (
     <>
-      <NavigationBar></NavigationBar>
+      <DashboardNav></DashboardNav>
       <div className="px-4 py-5 my-5 text-center">
         <img className="d-block mx-auto mb-4" src="/logo2.png" alt="Logo" />
         <h1 className="display-5 fw-bold mb-5">Devolucion un vehiculo</h1>

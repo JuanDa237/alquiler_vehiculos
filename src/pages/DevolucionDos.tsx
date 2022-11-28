@@ -1,9 +1,9 @@
-import { NavigationBar } from '../components/NavigationBar';
+import { DashboardNav } from '../components/DashboardNav';
 
 export function DevolucionDos() {
   return (
     <>
-      <NavigationBar></NavigationBar>
+      <DashboardNav></DashboardNav>
       <div className="container-fluid p-3">
         <div className="h1">Finalizacion de devolucion</div>
       </div>
