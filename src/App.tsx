@@ -9,6 +9,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Devolucion } from './pages/Devolucion';
 import { DevolucionDos } from './pages/DevolucionDos';
 import { Entrega } from './pages/Entrega';
+import { AdminVehiclesList } from './pages/AdminVehiclesList';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
             element={<DevolucionDos />}
           ></Route>
           <Route path="/entrega" element={<Entrega />}></Route>
+          <Route
+            path="/lista-vehiculos"
+            element={<AdminVehiclesList />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

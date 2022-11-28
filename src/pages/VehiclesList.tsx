@@ -1,8 +1,21 @@
+import React, { useEffect, useState } from 'react';
 import { NavigationBar } from '../components/NavigationBar';
 import { VehicleCard } from '../components/VehicleCard';
-import { vehicles } from '../data/vehicle';
+import { IVehicle } from '../data/vehicle';
+import { VehicleApi } from '../api/vehicle.api';
 
 export function VehiclesList() {
+  const [vehicles, setVehicles] = useState<IVehicle[]>([]);
+
+  useEffect(() => {
+    getVehicles();
+  }, []);
+
+  const getVehicles = async () => {
+    let resp = await VehicleApi.getAllVehicles();
+    setVehicles(resp);
+  };
+
   return (
     <>
       <NavigationBar></NavigationBar>

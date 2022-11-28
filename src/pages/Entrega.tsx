@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { vehicles } from '../data/vehicle';
 import StepLabel from '@mui/material/StepLabel';
 import Step from '@mui/material/Step';
 import Stepper from '@mui/material/Stepper';
@@ -12,7 +11,8 @@ import { DashboardNav } from '../components/DashboardNav';
 
 export function Entrega() {
   const params = useParams();
-  const vehicle = vehicles.find((vehicle) => vehicle.id === Number(params.id));
+  const vehicle = {};
+
   const steps = [
     'Información Personal',
     'Información del Conductor',

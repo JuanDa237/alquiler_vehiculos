@@ -26,6 +26,11 @@ export function DashboardNav() {
         <div className="collapse navbar-collapse" id="navbarsExample04">
           <ul className="navbar-nav ms-auto mb-2 mb-md-0">
             <li className="nav-item">
+              <Link className="nav-link" to="/lista-vehiculos">
+                Vehiculos
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/devolucion">
                 Devolucion
               </Link>
