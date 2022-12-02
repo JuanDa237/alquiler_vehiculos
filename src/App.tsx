@@ -11,6 +11,7 @@ import { DevolucionDos } from './pages/DevolucionDos';
 import { Entrega } from './pages/Entrega';
 import { AdminVehiclesList } from './pages/AdminVehiclesList';
 import { BuscarReserva } from './pages/BuscarReserva';
+import { VehiclesForm } from './pages/VehiclesForm';
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
             path="/lista-vehiculos"
             element={<AdminVehiclesList />}
           ></Route>
+          <Route path="/vehicle/add" element={<VehiclesForm />}></Route>
+          <Route path="/vehicle/edit/:id" element={<VehiclesForm />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

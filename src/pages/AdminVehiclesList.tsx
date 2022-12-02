@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { VehicleApi } from '../api/vehicle.api';
 
 import { DashboardNav } from '../components/DashboardNav';
-import { VehicleCard } from '../components/VehicleCard';
 import { IVehicle } from '../data/vehicle';
 
 export function AdminVehiclesList() {
@@ -15,7 +15,17 @@ export function AdminVehiclesList() {
   const getVehicles = async () => {
     let resp = await VehicleApi.getAllVehicles();
     setVehicles(resp);
-    console.log(resp);
+  };
+
+  // Events
+
+  const deleteEvent = async (id: number) => {
+    await VehicleApi.deleteVehicle(id);
+    setVehicles(
+      vehicles.filter((x) => {
+        return x.id !== id;
+      }),
+    );
   };
 
   return (
@@ -27,9 +37,9 @@ export function AdminVehiclesList() {
             <div className="h2">Lista de vehiculos</div>
           </div>
           <div className="col-10">
-            <a href="" className="btn btn-success">
+            <Link to="/vehicle/add" className="btn btn-success">
               Nuevo vehiculo
-            </a>
+            </Link>
           </div>
         </div>
         <div className="row">
@@ -50,7 +60,7 @@ export function AdminVehiclesList() {
               <tbody>
                 {vehicles.map((vehicle) => {
                   return (
-                    <tr>
+                    <tr key={vehicle.id}>
                       <td>{vehicle.id}</td>
                       <td>{vehicle.brand}</td>
                       <td>{vehicle.range}</td>
@@ -60,12 +70,20 @@ export function AdminVehiclesList() {
                       <td>{vehicle.image.substring(0, 50)} ...</td>
                       <td>
                         <div className="btn-group" role="group">
-                          <a href="" className="btn btn-info">
+                          <Link
+                            to={'/vehicle/edit/' + vehicle.id}
+                            className="btn btn-info"
+                          >
                             Editar
-                          </a>
-                          <a href="" className="btn btn-danger">
+                          </Link>
+                          <button
+                            className="btn btn-danger"
+                            onClick={() => {
+                              deleteEvent(vehicle.id);
+                            }}
+                          >
                             Eliminar
-                          </a>
+                          </button>
                         </div>
                       </td>
                     </tr>

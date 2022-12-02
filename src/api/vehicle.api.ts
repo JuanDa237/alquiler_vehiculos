@@ -13,7 +13,20 @@ const getAllVehicles = async (): Promise<IVehicle[]> => {
   return data;
 };
 
-const createVehicle = async (vehicle: IVehicle): Promise<IVehicle> => {
+const getVehicle = async (id: number): Promise<IVehicle> => {
+  let res = await fetch(vehicleAPI + `/${id}`, { method: 'GET' });
+  let data = await res.json();
+
+  if (!res.ok) {
+    throw Error(data.message || res.statusText);
+  }
+
+  return data;
+};
+
+const createVehicle = async (
+  vehicle: Omit<IVehicle, 'id'>,
+): Promise<IVehicle> => {
   let res = await fetch(vehicleAPI, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -61,6 +74,7 @@ const deleteVehicle = async (id: number): Promise<IVehicle> => {
 
 export const VehicleApi = {
   getAllVehicles,
+  getVehicle,
   createVehicle,
   editVehicle,
   deleteVehicle,

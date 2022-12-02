@@ -8,7 +8,7 @@ export function DashboardNav() {
       aria-label="Fourth navbar example"
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/dashboard">
           <img src="/logo.png" alt="Logo" height="40" />
         </a>
         <button
