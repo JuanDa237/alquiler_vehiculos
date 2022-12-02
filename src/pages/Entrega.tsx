@@ -28,222 +28,199 @@ export function Entrega() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  // Formularios
+
+  const InformacionPersonal = () => {
+    return (
+      <form className="row row-cols-2">
+        <div className="col mb-2">
+          <label className="form-label">Tipo de documento</label>
+          <select className="form-select" aria-label="Default select example">
+            <option selected>C.C</option>
+            <option selected>Pasaporte</option>
+          </select>
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Número de documento</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Tipo de documento</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Empresa</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Nombre Completo</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Fecha de nacimiento</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Genero</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Telefono 1</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Telefono 2</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Correo electronico</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Nivel escolaridad</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Dirección</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Dirección</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Código postal</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Fecha de vencimiento de la licencia
+          </label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Número de licencia de conducción</label>
+          <input className="form-control" type="text" />
+        </div>
+      </form>
+    );
+  };
+
+  const InformacionConductor = () => {
+    return (
+      <form className="row row-cols-2">
+        <div className="col mb-2">
+          <label className="form-label">
+            Fecha de expedición de la licencia
+          </label>
+          <input className="form-control" type="date" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Fecha de vigencia de la categoría
+          </label>
+          <input className="form-control" type="date" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Adjuntar parte frontal de la licencia
+          </label>
+          <input className="form-control" type="file" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Adjuntar parte posterior de la licencia
+          </label>
+          <input className="form-control" type="file" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Categoría autorizada</label>
+          <select className="form-control" name="" id="">
+            <option value="">B1</option>
+          </select>
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Grupo sanguineo</label>
+          <select className="form-control" name="" id="">
+            <option value="">A+</option>
+          </select>
+        </div>
+      </form>
+    );
+  };
+
+  const Contrato = () => {
+    return (
+      <form className="row row-cols-2">
+        <div className="col mb-2">
+          <label className="form-label">Adjuntar contrato</label>
+          <input className="form-control" type="file" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Kilometraje del vehiculo al momento de la entrega
+          </label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Nivel de gasolina en litros al momento de la entrega
+          </label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">
+            Número de documento del empleado que realizó la entrega
+          </label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Hora de la entrega</label>
+          <input className="form-control" type="text" />
+        </div>
+        <div className="col mb-2">
+          <label className="form-label">Adjuntar fotos del vehiculo</label>
+          <input className="form-control" type="file" />
+        </div>
+      </form>
+    );
+  };
+
   return (
     <div>
       <DashboardNav></DashboardNav>
-      <Box sx={{ width: '100%' }}>
-        <Stepper activeStep={activeStep}>
+      <div className="container-fluid">
+        <Stepper className="my-4" activeStep={activeStep}>
           {steps.map((label, index) => {
-            const stepProps: { completed?: boolean } = {};
-            const labelProps: {
-              optional?: React.ReactNode;
-            } = {};
             return (
-              <Step key={label} {...stepProps}>
-                <StepLabel {...labelProps}>{label}</StepLabel>
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
               </Step>
             );
           })}
         </Stepper>
-        {activeStep === steps.length ? (
-          <React.Fragment>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Box sx={{ flex: '1 1 auto' }} />
-            </Box>
-          </React.Fragment>
+        {activeStep === 0 ? (
+          <InformacionPersonal />
+        ) : activeStep === 1 ? (
+          <InformacionConductor />
         ) : (
-          <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-            {activeStep === 0 ? (
-              <form>
-                <label>Información Personal</label>
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gridTemplateColumns: '50% 50%',
-                    padding: '20px',
-                    rowGap: '2rem',
-                    columnGap: '2rem',
-                  }}
-                >
-                  <span>
-                    <label>Tipo de documento</label>
-                    <select style={{ width: '100%' }} name="" id="">
-                      <option value="">C.C</option>
-                    </select>
-                  </span>
-                  <span>
-                    <label>Número de documento</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Tipo de documento</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Empresa</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Nombre Completo</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Fecha de nacimiento</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Genero</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Telefono 1</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Telefono 2</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Correo electronico</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Nivel escolaridad</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Dirección</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Dirección</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Código postal</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Fecha de vencimiento de la licencia</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Número de licencia de conducción</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                </Box>
-              </form>
-            ) : activeStep === 1 ? (
-              <form>
-                <label>Información Personal del Conductor</label>
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gridTemplateColumns: '50% 50%',
-                    padding: '20px',
-                    rowGap: '2rem',
-                  }}
-                >
-                  <span>
-                    <label>Fecha de expedición de la licencia</label>
-                    <input style={{ width: '100%' }} type="date" />
-                  </span>
-                  <span>
-                    <label>Fecha de vigencia de la categoría</label>
-                    <input style={{ width: '100%' }} type="date" />
-                  </span>
-                  <span>
-                    <button>Adjuntar parte frontal de la licencia</button>
-                  </span>
-                  <span>
-                    <button>Adjuntar parte posterior de la licencia</button>
-                  </span>
-                  <span>
-                    <label>Categoría autorizada</label>
-                    <select style={{ width: '100%' }} name="" id="">
-                      <option value="">B1</option>
-                    </select>
-                  </span>
-                  <span>
-                    <label>Grupo sanguineo</label>
-                    <select style={{ width: '100%' }} name="" id="">
-                      <option value="">A+</option>
-                    </select>
-                  </span>
-                  <span>
-                    <button>Cambio de vehiculo</button>
-                  </span>
-                  <span>
-                    <button>Guardar</button>
-                  </span>
-                </Box>
-              </form>
-            ) : (
-              <form>
-                <label>Información Personal del Conductor</label>
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gridTemplateColumns: '50% 50%',
-                    padding: '20px',
-                    rowGap: '2rem',
-                  }}
-                >
-                  <span>
-                    <button style={{ width: '100%' }}>Adjuntar contrato</button>
-                  </span>
-                  <span>
-                    <button style={{ width: '100%' }}>Adjuntar contrato</button>
-                  </span>
-                  <span>
-                    <label>
-                      Kilometraje del vehiculo al momento de la entrega
-                    </label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>
-                      Nivel de gasolina en litros al momento de la entrega
-                    </label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>
-                      Número de documento del empleado que realizó la entrega
-                    </label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <label>Hora de la entrega</label>
-                    <input style={{ width: '100%' }} type="text" />
-                  </span>
-                  <span>
-                    <button style={{ width: '100%' }}>Ajuntar fotos</button>
-                  </span>
-                  <span>
-                    <button style={{ width: '100%' }}>Finalizar entrega</button>
-                  </span>
-                </Box>
-              </form>
-            )}
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Button
-                color="inherit"
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                sx={{ mr: 1 }}
-              >
-                Back
-              </Button>
-              <Box sx={{ flex: '1 1 auto' }} />
-              <Button onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-            </Box>
-          </React.Fragment>
+          <Contrato />
         )}
-      </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Button
+            color="inherit"
+            disabled={activeStep === 0}
+            onClick={handleBack}
+            sx={{ mr: 1 }}
+          >
+            Atras
+          </Button>
+          <Box sx={{ flex: '1 1 auto' }} />
+          <Button onClick={handleNext}>
+            {activeStep === steps.length - 1 ? 'Finalizar' : 'Siguiente'}
+          </Button>
+        </Box>
+      </div>
     </div>
   );
 }
