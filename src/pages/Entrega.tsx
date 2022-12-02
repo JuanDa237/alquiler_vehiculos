@@ -1,18 +1,14 @@
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+
 import StepLabel from '@mui/material/StepLabel';
 import Step from '@mui/material/Step';
 import Stepper from '@mui/material/Stepper';
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
-import React from 'react';
+
 import { DashboardNav } from '../components/DashboardNav';
 
 export function Entrega() {
-  const params = useParams();
-  const vehicle = {};
-
   const steps = [
     'Información Personal',
     'Información del Conductor',

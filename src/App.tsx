@@ -10,6 +10,7 @@ import { Devolucion } from './pages/Devolucion';
 import { DevolucionDos } from './pages/DevolucionDos';
 import { Entrega } from './pages/Entrega';
 import { AdminVehiclesList } from './pages/AdminVehiclesList';
+import { BuscarReserva } from './pages/BuscarReserva';
 
 function App() {
   return (
@@ -24,12 +25,20 @@ function App() {
           {/* Privadas */}
           <Route path="/login" element={<Login />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
-          <Route path="/devolucion" element={<Devolucion />}></Route>
+          <Route
+            path="/devolucion"
+            element={<BuscarReserva to="/devolucion/formulario" />}
+          ></Route>
+          <Route path="/devolucion/formulario" element={<Devolucion />}></Route>
           <Route
             path="/devolucion/finalizado"
             element={<DevolucionDos />}
           ></Route>
-          <Route path="/entrega" element={<Entrega />}></Route>
+          <Route
+            path="/entrega"
+            element={<BuscarReserva to="/entrega/formulario" />}
+          ></Route>
+          <Route path="/entrega/formulario" element={<Entrega />}></Route>
           <Route
             path="/lista-vehiculos"
             element={<AdminVehiclesList />}
