@@ -4,8 +4,13 @@ import { VehicleApi } from '../api/vehicle.api';
 import { DashboardNav } from '../components/DashboardNav';
 import { IVehicle } from '../data/vehicle';
 
-const useField = ({ name = '', type = '', className = 'form-control' }) => {
-  const [value, setValue] = useState('');
+const useField = ({
+  name = '',
+  type = '',
+  className = 'form-control',
+  defaultValue = '',
+}) => {
+  const [value, setValue] = useState(defaultValue);
 
   const setValueExport = useCallback((newValue: any) => setValue(newValue), []);
 
@@ -45,6 +50,7 @@ export function VehiclesForm() {
     name: 'range',
     type: 'text',
     className: 'form-select',
+    defaultValue: 'automatico',
   });
   const [description, setDescription] = useField({
     name: 'range',
