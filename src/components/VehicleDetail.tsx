@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 
 import { IVehicle } from '../data/vehicle';
 import { VehicleApi } from '../api/vehicle.api';
+import { NavigationBar } from './NavigationBar';
 
 export function VehicleDetail() {
   const params = useParams();
@@ -34,6 +35,7 @@ export function VehicleDetail() {
   };
 
   const activeComponent = () => {
+    
     switch (activeStep) {
       case 0:
         return <EscojerReserva />
@@ -49,6 +51,8 @@ export function VehicleDetail() {
 
   const CarCard = () => {
     return (
+      <>
+      <NavigationBar></NavigationBar>
       <div className="container-xl mt-5">
         <div className="row">
           <div className="col-12">
@@ -97,6 +101,8 @@ export function VehicleDetail() {
           </div>
         </div>
       </div>
+      </>
+      
     );
   };
 
