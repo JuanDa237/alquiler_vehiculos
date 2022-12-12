@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
 import { useParams } from 'react-router-dom';
-
 import StepLabel from '@mui/material/StepLabel';
 import Step from '@mui/material/Step';
 import Stepper from '@mui/material/Stepper';
@@ -34,6 +32,20 @@ export function VehicleDetail() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
+  const activeComponent = () => {
+    switch (activeStep) {
+      case 0:
+        return <EscojerReserva />
+      case 1:
+        return <InformacionPersonal />
+      case 2:
+        return <Fin />
+      case 3:
+        return <Reserva />
+    }
+
+  }
 
   const CarCard = () => {
     return (
@@ -253,6 +265,49 @@ export function VehicleDetail() {
         <b>Reserva: Kilometraje Ilimitado</b>
         <br />
         Valor día: 200.000$ Días: 9 Iva: 19% Descuento: 0
+        <br />
+        <strong>Total: 2142000 cop</strong>
+      </>
+    );
+  };
+
+  const Reserva = () => {
+    return (
+      <>
+        <table>
+          <tr>
+            <td>
+              <b>Lugar de retiro</b>
+            </td>
+            <td>
+              <b>Lugar de devolución</b>
+            </td>
+          </tr>
+          <tr>
+            <td>20 de febrero de 2022</td>
+            <td>29 de febrero de 2022</td>
+          </tr>
+          <tr>
+            <td>Sede medellín - Calle 108 #65 e 42</td>
+            <td>Sede medellín - Calle 108 #65 e 42</td>
+          </tr>
+        </table>
+        <b>Datos personales</b>
+        <br />
+        Nombre: Pepito Perez Soza Dcoumento de identidad:10006279344 Licencia de
+        conducción: 111234543322
+        <br />
+        Correo Electronico: Pepito@correo.com Teléfono: 52342435
+        <br />
+        <b>Reserva: Kilometraje Ilimitado</b>
+        <br />
+        Valor día: 200.000$ Días: 9 Iva: 19% Descuento: 0
+        <br />
+        <strong>Total: 2142000 cop</strong>
+        <br />
+        <strong>Numero de reserva:<br />
+          1
+        </strong>
       </>
     );
   };
@@ -271,13 +326,7 @@ export function VehicleDetail() {
             );
           })}
         </Stepper>
-        {activeStep === 0 ? (
-          <EscojerReserva />
-        ) : activeStep === 1 ? (
-          <InformacionPersonal />
-        ) : (
-          <Fin />
-        )}
+        {activeComponent()}
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           <Button
             color="inherit"
